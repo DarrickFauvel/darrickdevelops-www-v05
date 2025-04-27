@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          crossorigin="crossorigin"
+          crossOrigin="anonymous"
           href="https://fonts.gstatic.com"
           rel="preconnect"
         />
@@ -48,7 +48,7 @@ export default function RootLayout({
         />
 
         <link
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
           href="/assets/styles/main.min.css"
           media="screen"
           rel="stylesheet"
