@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          crossorigin="crossorigin"
+          crossOrigin="anonymous"
           href="https://fonts.gstatic.com"
           rel="preconnect"
         />
@@ -48,21 +48,21 @@ export default function RootLayout({
         />
 
         <link
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
           href="/assets/styles/main.min.css"
           media="screen"
           rel="stylesheet"
         />
 
-        <script
+        {/* <script
           defer
           src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-        ></script>
+        ></script> */}
 
-        <script
+        {/* <script
           defer
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-        ></script>
+        ></script> */}
       </head>
 
       <body
