@@ -54,15 +54,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        <script
+        {/* <script
           defer
           src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
-        ></script>
+        ></script> */}
 
-        <script
+        {/* <script
           defer
           src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
-        ></script>
+        ></script> */}
       </head>
 
       <body
