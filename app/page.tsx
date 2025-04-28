@@ -1,11 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Footer from "../components/footer";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useClickOutside(menuRef, () => setMenuOpen(false))
 
   const handleMenuClick = (id: string) => {
     const section = document.getElementById(id);
@@ -130,6 +134,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Mobile menu backdrop */}
       <div
         className={`fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 ${
           menuOpen
@@ -137,7 +142,11 @@ export default function Home() {
             : "pointer-events-none opacity-0"
         } transition-opacity lg:hidden`}
       >
-        <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
+        {/* Mobile menu START */}
+        <div
+          className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3"
+          ref={menuRef}
+        >
           <button
             className="absolute top-0 right-0 mt-4 mr-4"
             onClick={() => setMenuOpen(false)}
@@ -223,6 +232,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
+        {/* Mobile menu END */}
       </div>
 
       <div>
