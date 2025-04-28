@@ -1,23 +1,13 @@
-const Footer = () => {
-  const navItems = [
-    {
-      name: "LinkedIn",
-      class: "bxl-linkedin",
-      url: "https://www.linkedin.com/in/darrickfauvel/",
-    },
-    {
-      name: "Github",
-      class: "bxl-github",
-      url: "https://github.com/DarrickFauvel",
-    },
-  ];
+import { socials } from "../constants/socials";
+import { Social } from "../types";
 
-  const Item = ({ item }) => {
+const Footer = () => {
+  const Item = ({ item }: {item: Social}) => {
     return (
       <li>
         <a href={item.url} target="_blank">
           <i
-            className={`bx ${item.class} text-2xl text-white hover:text-yellow`}
+            className={`bx ${item.iconClass} text-2xl text-white hover:text-yellow`}
           ></i>
         </a>
       </li>
@@ -32,7 +22,7 @@ const Footer = () => {
           Develops.
         </p>
         <ul className="flex items-center justify-center gap-4 pt-5 sm:justify-start sm:pt-0">
-          {navItems.map((item) => (
+          {socials.map((item) => (
             <Item item={item} key={item.name} />
           ))}
         </ul>
