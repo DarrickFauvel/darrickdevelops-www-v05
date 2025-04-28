@@ -20,12 +20,11 @@ export default function Home() {
         >
           <div className="container flex items-center justify-between">
             <div>
-              <a href="/">
-                <img
-                  src="/assets/img/logo.svg"
-                  className="w-24 lg:w-48"
-                  alt="logo image"
-                />
+              <a className="flex items-center gap-2" href="/">
+                <span className="text-2xl">&lt;/&gt;</span>
+                <span className="leading-4 text-xl">
+                  Darrick Develops
+                </span>
               </a>
             </div>
             <div className="hidden lg:block">
