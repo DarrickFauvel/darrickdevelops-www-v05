@@ -1,15 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../components/footer";
 import { useClickOutside } from "../hooks/useClickOutside";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const menuRef = useRef(null);
 
-  useClickOutside(menuRef, () => setMenuOpen(false))
+  useClickOutside(menuRef, () => setMenuOpen(false));
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const handleMenuClick = (id: string) => {
     const section = document.getElementById(id);
@@ -21,6 +42,15 @@ export default function Home() {
 
   return (
     <div id="main" className="relative">
+      <div className="fixed bottom-8 right-2 z-50">
+        {isVisible && (
+          <button className="btn-top flex flex-col" onClick={scrollToTop}>
+            <span className="-mb-3 text-xl">^</span>
+            <span>Top</span>
+          </button>
+        )}
+      </div>
+
       <div className="w-full z-50 top-0 py-3 sm:py-5 absolute">
         <div className="container flex items-center justify-between">
           <div>
