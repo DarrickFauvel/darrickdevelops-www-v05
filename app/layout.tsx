@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "./main.min.css";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,12 +48,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        <link
+        {/* <link
           crossOrigin="anonymous"
           href="/assets/styles/main.min.css"
           media="screen"
           rel="stylesheet"
-        />
+        /> */}
 
         {/* <script
           defer
