@@ -1,6 +1,7 @@
 import Footer from "../components/footer";
 import ButtonBackToTop from "../components/button-back-to-top";
 import HeaderNav from "../components/header-nav";
+import profilePic from './df-looking-nw.jpg'
 
 export default function Home() {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center lg:flex-row">
               <div className="rounded-full border-8 border-primary shadow-xl">
                 <img
-                  src="/assets/img/blog-author.jpg"
+                  src="/assets/img/df-looking-nw-square.jpg"
                   className="h-48 rounded-full sm:h-56"
                   alt="author"
                 />
