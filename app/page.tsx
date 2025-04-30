@@ -1,6 +1,7 @@
 import Footer from "../components/footer";
 import ButtonBackToTop from "../components/button-back-to-top";
 import HeaderNav from "../components/header-nav";
+import { site } from "../constants/config";
 import profilePic from './df-looking-nw.jpg'
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
           <div>
             <a className="flex items-center gap-2 text-white" href="/">
               <span className="text-2xl">&lt;/&gt;</span>
-              <span className="leading-4 text-xl">Darrick Develops</span>
+              <span className="leading-4 text-xl">{site.brand.name}</span>
             </a>
           </div>
 
@@ -39,7 +40,7 @@ export default function Home() {
               </div>
               <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                 <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                  Hello I'm Christy Smith!
+                  Hello, I'm {site.brand.author.firstName}!
                 </h1>
                 <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                   <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
@@ -80,7 +81,7 @@ export default function Home() {
                 Who am I?
               </h2>
               <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                I'm Christy Smith, a Web Designer & Photographer
+                I'm {site.brand.author.firstName} {site.brand.author.lastName}, a {site.brand.author.title}
               </h4>
               <p className="pt-6 font-body leading-relaxed text-grey-20">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
