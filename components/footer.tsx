@@ -1,8 +1,11 @@
+"use client";
+
+import "./wc-link.js";
 import { socials } from "../constants/socials";
 import { Social } from "../types";
 
 const Footer = () => {
-  const Item = ({ item }: {item: Social}) => {
+  const Item = ({ item }: { item: Social }) => {
     return (
       <li>
         <a href={item.url} target="_blank">
