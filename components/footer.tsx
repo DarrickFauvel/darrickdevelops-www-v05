@@ -1,6 +1,5 @@
 "use client";
 
-import "./wc-link.js";
 import { socials } from "../constants/socials";
 import { Social } from "../types";
 
