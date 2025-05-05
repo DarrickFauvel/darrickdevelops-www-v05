@@ -1,4 +1,4 @@
-export const ContactSection = () => {
+export default function ContactSection() {
   return (
     <section className="container py-16 md:py-20" id="contact">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -79,4 +79,4 @@ export const ContactSection = () => {
       </div>
     </section>
   );
-};
+}

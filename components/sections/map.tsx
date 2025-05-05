@@ -1,4 +1,4 @@
-export const MapSection = () => {
+export default function MapSection  ()  {
   return (
     <section
       id="map"
