@@ -1,4 +1,4 @@
-export const KeepUpToDateSection = () => {
+export default function KeepUpToDateSection() {
   return (
     <section
       id="keep-up-to-date"
@@ -24,4 +24,4 @@ export const KeepUpToDateSection = () => {
       </div>
     </section>
   );
-};
+}

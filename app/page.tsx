@@ -1,18 +1,18 @@
-import Footer from "../components/footer";
+import AboutSection from "../components/sections/about";
+import BlogSection from "../components/sections/blog";
 import ButtonBackToTop from "../components/button-back-to-top";
+import ClientsSection from "../components/sections/clients";
+import ContactSection from "../components/sections/contact";
+import Footer from "../components/footer";
 import HeaderNav from "../components/header-nav";
-import { site } from "../constants/config";
-import { HeroSection } from "../components/sections/hero";
-import { AboutSection } from "../components/sections/about";
-import { ServicesSection } from "../components/sections/services";
-import { PortfolioSection } from "../components/sections/portfolio";
-import { ClientsSection } from "../components/sections/clients";
-import { WorkSection } from "../components/sections/work";
-import { StatisticsSection } from "../components/sections/statistics";
-import { BlogSection } from "../components/sections/blog";
-import { ContactSection } from "../components/sections/contact";
-import { MapSection } from "../components/sections/map";
-import { KeepUpToDateSection } from "../components/sections/keep-up-to-date";
+import HeroSection from "../components/sections/hero";
+import KeepUpToDateSection from "../components/sections/keep-up-to-date";
+import MapSection from "../components/sections/map";
+import PortfolioSection from "../components/sections/portfolio";
+import ServicesSection from "../components/sections/services";
+import StatisticsSection from "../components/sections/statistics";
+import WorkSection from "../components/sections/work";
+import { brand } from "../constants/config";
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
           <div>
             <a className="flex items-center gap-2 text-white" href="/">
               <span className="text-2xl">&lt;/&gt;</span>
-              <span className="leading-4 text-xl">{site.brand.name}</span>
+              <span className="leading-4 text-xl">{brand.name}</span>
             </a>
           </div>
 

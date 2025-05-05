@@ -1,4 +1,4 @@
-export const BlogSection = () => {
+export default function BlogSection  ()  {
   return (
     <section className="bg-grey-50" id="blog">
       <div className="container py-16 md:py-20">

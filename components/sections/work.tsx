@@ -1,4 +1,4 @@
-export const WorkSection = () => {
+export default function WorkSection() {
   return (
     <section className="container py-16 md:py-20" id="work">
       <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
@@ -134,4 +134,4 @@ export const WorkSection = () => {
       </div>
     </section>
   );
-};
+}

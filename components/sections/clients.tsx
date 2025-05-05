@@ -1,4 +1,4 @@
-export const ClientsSection = () => {
+export default function ClientsSection() {
   return (
     <section className="bg-grey-50" id="clients">
       <div className="container py-16 md:py-20">
@@ -50,4 +50,4 @@ export const ClientsSection = () => {
       </div>
     </section>
   );
-};
+}

@@ -1,4 +1,4 @@
-export const StatisticsSection = () => {
+export default function StatisticsSection() {
   return (
     <section
       className="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
@@ -86,4 +86,4 @@ export const StatisticsSection = () => {
       </div>
     </section>
   );
-};
+}
