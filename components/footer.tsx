@@ -11,7 +11,7 @@ export default function Footer() {
           Develops.
         </p>
 
-        <SocialList />
+        <SocialList variant="secondary" />
       </div>
     </footer>
   );
