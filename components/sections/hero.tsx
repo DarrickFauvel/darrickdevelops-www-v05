@@ -33,7 +33,7 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <SocialList variant='secondary' />
+              <SocialList variant="secondary" />
             </div>
           </div>
         </div>

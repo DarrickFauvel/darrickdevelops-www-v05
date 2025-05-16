@@ -1,3 +1,4 @@
+import { Icon } from "@iconify-icon/react";
 import { Social } from "../../types";
 
 export default function SocialItem({
@@ -11,15 +12,16 @@ export default function SocialItem({
     variant === "primary"
       ? "text-primary hover:text-yellow"
       : variant === "secondary"
-      ? "text-white hover:text-yellow"
+      ? "text-white hover:text-yellow-300! hover:text-shadow-lg! hover:text-shadow-purple-700 hover:-translate-y-1! hover:scale-125! transition duration-200"
       : "text-white hover:text-yellow";
 
   return (
     <li>
       <a href={item.url} target="_blank">
-        <i
-          className={`bx ${item.iconClass} text-2xl ${getTextClasses(variant)}`}
-        ></i>
+        <Icon
+          icon={item.iconName}
+          className={`text-2xl ${getTextClasses(variant)}`}
+        />
       </a>
     </li>
   );
