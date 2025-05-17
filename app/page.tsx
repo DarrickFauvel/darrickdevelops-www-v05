@@ -37,7 +37,7 @@ export default function Home() {
 
         <AboutSection />
 
-        <ServicesSection />
+        {/* <ServicesSection /> */}
 
         <PortfolioSection />
 
@@ -45,7 +45,7 @@ export default function Home() {
 
         <WorkSection />
 
-        <StatisticsSection />
+        {/* <StatisticsSection /> */}
 
         {/* <BlogSection /> */}
 
