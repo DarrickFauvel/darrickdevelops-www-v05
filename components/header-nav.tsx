@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
+
+import { Icon } from "@iconify-icon/react";
 import { useClickOutside } from "../hooks/useClickOutside";
 
 const HeaderNav = () => {
@@ -116,7 +118,7 @@ const HeaderNav = () => {
       {/* Hamburger menu START */}
       <div className="block lg:hidden">
         <button onClick={() => setMenuOpen(true)}>
-          <i className="bx bx-menu text-4xl text-white"></i>
+          <Icon icon="famicons:menu" className="text-4xl text-white" />
         </button>
       </div>
       {/* Hamburger menu END */}
@@ -137,11 +139,7 @@ const HeaderNav = () => {
             className="absolute top-0 right-0 mt-4 mr-4"
             onClick={() => setMenuOpen(false)}
           >
-            <img
-              src="/assets/img/icon-close.svg"
-              className="h-10 w-auto"
-              alt=""
-            />
+            <Icon icon="famicons:close" className="text-4xl text-white" />
           </button>
 
           <ul className="mt-8 flex flex-col">
