@@ -1,8 +1,11 @@
 "use client";
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import { Icon } from "@iconify-icon/react";
+import MobileMenu from "./menu/mobile";
+import WideMenu from "./menu/wide";
+import { data } from "./menu/menu-data";
 import { useClickOutside } from "../hooks/useClickOutside";
 
 const HeaderNav = () => {
@@ -11,109 +14,17 @@ const HeaderNav = () => {
 
   useClickOutside(menuRef, () => setMenuOpen(false));
 
-  const handleMenuClick = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
+    const link = event.currentTarget.getAttribute('data-link')
+    if (link) {
+      document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
     }
     setMenuOpen(false);
   };
 
   return (
     <>
-      {/* Menu wide START */}
-      <div className="hidden lg:block">
-        <ul className="flex items-center">
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("about")}
-            >
-              About
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("services")}
-            >
-              Services
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("portfolio")}
-            >
-              Portfolio
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("clients")}
-            >
-              Clients
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("work")}
-            >
-              Work
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("statistics")}
-            >
-              Statistics
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("blog")}
-            >
-              Blog
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-
-          <li className="group pl-6">
-            <span
-              className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-              onClick={() => handleMenuClick("contact")}
-            >
-              Contact
-            </span>
-
-            <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-          </li>
-        </ul>
-      </div>
-      {/* Menu wide END */}
+      <WideMenu onClick={handleMenuClick} />
 
       {/* Hamburger menu START */}
       <div className="block lg:hidden">
@@ -142,79 +53,7 @@ const HeaderNav = () => {
             <Icon icon="famicons:close" className="text-4xl text-white" />
           </button>
 
-          <ul className="mt-8 flex flex-col">
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("about")}
-              >
-                About
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("services")}
-              >
-                Services
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("portfolio")}
-              >
-                Portfolio
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("clients")}
-              >
-                Clients
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("work")}
-              >
-                Work
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("statistics")}
-              >
-                Statistics
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("blog")}
-              >
-                Blog
-              </span>
-            </li>
-
-            <li className="py-2">
-              <span
-                className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-                onClick={() => handleMenuClick("contact")}
-              >
-                Contact
-              </span>
-            </li>
-          </ul>
+          <MobileMenu data={data} onClick={handleMenuClick} />
         </div>
         {/* Mobile menu END */}
       </div>
