@@ -41,23 +41,22 @@ export default function Home() {
 
         <PortfolioSection />
 
-        <ClientsSection />
+        {/* <ClientsSection /> */}
 
         <WorkSection />
 
         <StatisticsSection />
 
-        <BlogSection />
+        {/* <BlogSection /> */}
 
         <ContactSection />
 
-        <MapSection />
+        {/* <MapSection /> */}
 
-        <KeepUpToDateSection />
+        {/* <KeepUpToDateSection /> */}
       </main>
 
       <Footer />
-      {/* <!--<script src="/assets/js/main.js"></script>--> */}
     </div>
   );
 }
