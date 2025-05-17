@@ -3,10 +3,10 @@
 import React, { useRef, useState } from "react";
 
 import { Icon } from "@iconify-icon/react";
-import MobileMenu from "./menu/mobile";
-import WideMenu from "./menu/wide";
-import { data } from "./menu/menu-data";
-import { useClickOutside } from "../hooks/useClickOutside";
+import MobileMenu from "../menu/mobile";
+import WideMenu from "../menu/wide";
+import { data } from "../menu/menu-data";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 const HeaderNav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ const HeaderNav = () => {
   useClickOutside(menuRef, () => setMenuOpen(false));
 
   const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
-    const link = event.currentTarget.getAttribute('data-link')
+    const link = event.currentTarget.getAttribute("data-link");
     if (link) {
       document.querySelector(link)?.scrollIntoView({ behavior: "smooth" });
     }
